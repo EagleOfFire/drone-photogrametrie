@@ -1,0 +1,29 @@
+digraph {
+	A [label=Start]
+	B [label="angle = 0"]
+	C [label="Turn off/on video stream"]
+	D [label="angle < 360?"]
+	E [label="Rotate clockwise (angle)"]
+	F [label="Move left (3)"]
+	G [label="Capture & Save Image"]
+	H [label="Increment angle by 1"]
+	I [label="Wait for 1s"]
+	J [label="Check key press"]
+	K [label="Break if ESC/n"]
+	L [label="Turn off video stream"]
+	M [label=End]
+	A -> B
+	B -> C
+	C -> D
+	D -> E [label=Yes]
+	E -> F
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+	J -> K [label="ESC/n Pressed"]
+	K -> L
+	J -> D [label=No]
+	D -> L [label=No]
+	L -> M
+}
